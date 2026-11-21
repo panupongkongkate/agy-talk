@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0-android</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <UseMaui>true</UseMaui>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <MauiVersion>10.0.130</MauiVersion>
+    <RootNamespace>AgyApp</RootNamespace>
+    <ApplicationId>com.hp.agytalk</ApplicationId>
+    <ApplicationTitle>agy-talk</ApplicationTitle>
+    <ApplicationVersion>6</ApplicationVersion>
+    <ApplicationDisplayVersion>2.0</ApplicationDisplayVersion>
+    <SupportedOSPlatformVersion>24.0</SupportedOSPlatformVersion>
+    <AndroidManifest>Platforms\Android\AndroidManifest.xml</AndroidManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+    <PackageReference Include="Microsoft.Maui.Essentials" Version="$(MauiVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#12B76A" />
+    <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#101828" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,12 @@
+# build output
+bin/
+obj/
+.vs/
+*.user
+*.suo
+
+# publish output รันจริงบน notebook (regen ได้ด้วย dotnet publish)
+server-run/
+
+# 🔐 private key เซ็นแอป — ข้อมูลสำคัญ ห้ามขึ้น git (สำรองแยกที่อื่น)
+agytalk.keystore
