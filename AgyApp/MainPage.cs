@@ -281,8 +281,16 @@ public class MainPage : ContentPage
 
             if (answer.StartsWith("⚠️"))
             {
+                // โรคประจำ: session TH-AI หมดอายุ — เคยเงียบเฉย ไม่มีเสียง เหมือนแอปตาย
+                if (answer.Contains("Session has expired") || answer.Contains("EXPIRED_SIGN_IN"))
+                    answer = "⚠️ Session ของ AI หมดอายุครับ เดี๋ยวระบบรีเฟรชเองภายใน 2 ชั่วโมง ถ้ารีบก็บอกหน้าคอมให้ล็อกอินใหม่";
                 status.Text = answer;
+                transcript.Add("🤖 " + answer);
+                RenderTranscript();
                 history.RemoveAt(history.Count - 1); // คำถามที่พังไม่เก็บเข้าประวัติ
+                var localesE = await TextToSpeech.GetLocalesAsync();
+                var thE = localesE.FirstOrDefault(l => (l.Language ?? "").StartsWith("th", StringComparison.OrdinalIgnoreCase));
+                await TextToSpeech.SpeakAsync(answer, new SpeechOptions { Locale = thE });
                 return;
             }
 
