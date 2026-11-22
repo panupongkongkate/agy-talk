@@ -2,8 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 	<uses-permission android:name="android.permission.RECORD_AUDIO" />
 	<uses-permission android:name="android.permission.INTERNET" />
+	<!-- ⚠️ android:icon ต้องใส่เอง — MAUI ไม่ฉีดให้ตอนใช้ custom AndroidManifest
+	     (ไม่ใส่ = launcher โชว์หุ่นยนต์แอนดรอยด์ ค้างมาตั้งแต่ต้น) -->
 	<application
 		android:label="agy-talk"
+		android:icon="@mipmap/appicon"
+		android:roundIcon="@mipmap/appicon_round"
 		android:usesCleartextTraffic="true">
 	</application>
 </manifest>
